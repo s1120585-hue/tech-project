@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學生個人簡介 - [您的名字]</title>
+    <!-- 載入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 配置 Tailwind CSS 以使用 'Inter' 字體和自定義顏色 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#3B82F6', // 專業藍色作為主色調
+                        'dark-bg': '#1F2937',     // 深色背景
+                        'light-bg': '#F9FAFB',    // 淺色背景
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 確保平滑滾動效果 */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* 自定義卡片陰影 */
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .card-shadow:hover {
+            transform: translateY(-5px);
+        }
+        /* Linktree IG 漸變色 */
+        .ig-gradient {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+    </style>
+</head>
+<body class="bg-light-bg font-sans text-gray-800">
+
+    <!-- 導航列 (Navigation Bar) -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <!-- 標誌/您的名字 -->
+            <a href="#hero" class="text-2xl font-bold text-primary-blue hover:text-blue-700 transition duration-300">
+                [您的名字]
+            </a>
+            <!-- 導航連結 -->
+            <nav class="space-x-4 flex items-center">
+                <a href="#about" class="text-gray-600 hover:text-primary-blue font-medium transition duration-300 rounded-full px-3 py-1">關於我</a>
+                <a href="#skills" class="text-gray-600 hover:text-primary-blue font-medium transition duration-300 rounded-full px-3 py-1">學測專長</a>
+                <!-- 突出顯示連結中心 -->
+                <a href="#hero" class="text-white bg-primary-blue hover:bg-blue-600 font-medium transition duration-300 rounded-full px-3 py-1 shadow-md">
+                    連結中心
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. 鏈接中心/簡介區塊 (Linktree Hub Section) -->
+    <!-- RWD 核心： min-h-screen 確保在手機上有足夠高度，且內容垂直居中 (md:items-center) -->
+    <section id="hero" class="min-h-screen pt-20 pb-10 bg-gradient-to-br from-white to-light-bg flex justify-center items-start md:items-center">
+        <div class="w-full max-w-sm md:max-w-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- 圖片/大頭貼 (Avatar) - 動態風格：hover 旋轉效果 -->
+            <div class="relative inline-block mb-6">
+                <img
+                    src="https://placehold.co/150x150/3B82F6/ffffff?text=您的+照片"
+                    onerror="this.onerror=null;this.src='https://placehold.co/150x150/3B82F6/ffffff?text=您的+照片';"
+                    alt="您的個人照片"
+                    class="rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-primary-blue shadow-xl transition duration-500 hover:rotate-3 transform"
+                >
+            </div>
+            
+            <!-- 標題/簡介 -->
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+                @<span class="text-primary-blue">[您的名字/用戶名]</span>
+            </h1>
+            <p class="mt-2 text-lg text-gray-600 mb-8">
+                🚀 <span class="font-semibold">高中生</span> | 專注 <span class="text-primary-blue font-semibold">學測準備</span> | 探索 [興趣領域]
+            </p>
+
+            <!-- 核心連結列表 (Linktree Buttons) - 動態風格：hover 放大效果 -->
+            <div class="space-y-4">
+                <!-- 連結 1: 電子郵件 (Email) -->
+                <a href="mailto:your.email@example.com" class="block w-full bg-primary-blue hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.03] active:scale-95 text-lg">
+                    📧 聯絡信箱 (Email)
+                </a>
+
+                <!-- 連結 2: GitHub -->
+                <a href="[您的 Github 連結]" target="_blank" class="block w-full bg-dark-bg hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.03] active:scale-95 text-lg">
+                    🐙 GitHub 專案/筆記
+                </a>
+
+                <!-- 連結 3: LinkedIn -->
+                <a href="[您的 LinkedIn 連結]" target="_blank" class="block w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.03] active:scale-95 text-lg">
+                    👔 LinkedIn (個人履歷)
+                </a>
+                
+                <!-- 連結 4: Instagram (IG) - 使用自定義 IG 漸層色 -->
+                <a href="[您的 Instagram 連結]" target="_blank" class="block w-full text-white font-bold py-3 px-6 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.03] active:scale-95 text-lg ig-gradient">
+                    📸 Instagram (生活/學習紀錄)
+                </a>
+            </div>
+
+            <!-- 次要連結/關於我 -->
+            <a href="#about" class="mt-10 inline-block text-primary-blue hover:text-blue-700 font-medium transition duration-300">
+                了解更多我的學涯規劃和專長
+                <span class="ml-1 text-xl align-middle">⬇️</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. 關於我區塊 (About Me Section) -->
+    <section id="about" class="py-16 md:py-24 bg-light-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">
+                我的學涯與目標
+            </h2>
+            <div class="bg-white p-8 md:p-12 rounded-xl card-shadow max-w-4xl mx-auto">
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    目前我是 [年級] 學生，正全心投入 <span class="font-semibold text-primary-blue">學測準備</span>。我的目標是進入
+                    <span class="font-semibold">[目標校系]</span>，專攻 <span class="font-semibold">[主修領域]</span>。
+                </p>
+                <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+                    我對 <span class="font-semibold">[特定科目或興趣]</span> 抱有極大熱忱，並利用 GitHub 記錄我的程式設計練習和筆記。
+                    我相信透過系統化的學習和實踐，能有效達成學術目標。
+                </p>
+                <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+                    除了課業，我也積極參與 <span class="font-semibold">[社團/校外活動]</span>，這讓我能夠在學術之外，培養團隊合作和領導能力。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 學測專長區塊 (GSAT/Skills Section) -->
+    <section id="skills" class="py-16 md:py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">
+                學測專長與學習方法
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <!-- 技能卡片 1: 國文/英文 (語文能力) -->
+                <div class="bg-white p-6 rounded-xl text-center card-shadow">
+                    <div class="text-4xl mb-3 text-primary-blue">📝</div>
+                    <h3 class="text-xl font-semibold mb-1">國文/英文</h3>
+                    <p class="text-gray-600 text-sm">閱讀理解、寫作架構、詞彙應用</p>
+                </div>
+
+                <!-- 技能卡片 2: 數學 (數理邏輯) -->
+                <div class="bg-white p-6 rounded-xl text-center card-shadow">
+                    <div class="text-4xl mb-3 text-primary-blue">📐</div>
+                    <h3 class="text-xl font-semibold mb-1">數學</h3>
+                    <p class="text-gray-600 text-sm">解題技巧、跨單元整合、微積分基礎</p>
+                </div>
+
+                <!-- 技能卡片 3: 自然/社會 (知識整合) -->
+                <div class="bg-white p-6 rounded-xl text-center card-shadow">
+                    <div class="text-4xl mb-3 text-primary-blue">🔬</div>
+                    <h3 class="text-xl font-semibold mb-1">自然/社會</h3>
+                    <p class="text-gray-600 text-sm">實驗分析、時事應用、概念圖建立</p>
+                </div>
+
+                <!-- 技能卡片 4: 學習工具 (輔助能力) -->
+                <div class="bg-white p-6 rounded-xl text-center card-shadow">
+                    <div class="text-4xl mb-3 text-primary-blue">💻</div>
+                    <h3 class="text-xl font-semibold mb-1">學習工具</h3>
+                    <p class="text-gray-600 text-sm">Anki 記憶卡、Notion 筆記、Python 基礎</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 (Footer) -->
+    <!-- 移除原有的 Contact 區塊，因為連結已整合到 Hero 區塊 -->
+    <footer class="bg-dark-bg py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p>&copy; <span id="current-year"></span> [您的名字]。所有連結請見上方連結中心。</p>
+            <p class="mt-2">
+                由 Gemini 建立，使用 Tailwind CSS 設計。
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 設定當前年份到頁腳
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
